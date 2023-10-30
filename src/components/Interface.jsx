@@ -1,6 +1,6 @@
 const Section = (props) => {
   const { children } = props;
-  return <section>{children}</section>;
+  return <section className={`h-screen w-screen p-8 max-x-screen 2xl mx-auto flex flex-col items-start justify-center`}>{children}</section>;
 };
 
 export const Interface = () => {
