@@ -10,6 +10,7 @@ import { useControls } from "leva";
 
 export function Avatar(props) {
   const { animation } = props;
+  // Define control options for the user interface
   const { headFollow, cursorFollow, wireframe } = useControls({
     headFollow: false,
     cursorFollow: false,
@@ -18,20 +19,23 @@ export function Avatar(props) {
   const group = useRef();
   const { nodes, materials } = useGLTF("models/651edeca7137f30e3a48f6d1.glb");
 
-  // ANIMATIONS
+  // Load various animations for the avatar
   const { animations: typingAnimation } = useFBX("animations/Typing.fbx");
   const { animations: standingAnimation } = useFBX("animations/Standing.fbx");
   const { animations: fallingAnimation } = useFBX("animations/Falling.fbx");
 
+  // Rename animations for clarity
   typingAnimation[0].name = "Typing";
   standingAnimation[0].name = "Standing";
   fallingAnimation[0].name = "Falling";
 
+  // Set up animation actions
   const { actions } = useAnimations(
     [typingAnimation[0], standingAnimation[0], fallingAnimation[0]],
     group,
   );
 
+  // Handle updates in each frame of the animation
   useFrame((state) => {
     if (headFollow) {
       group.current.getObjectByName("Head").lookAt(state.camera.position);
@@ -42,6 +46,7 @@ export function Avatar(props) {
     }
   });
 
+  // Set up animations based on user selection
   useEffect(() => {
     actions[animation].reset().fadeIn(0.5).play();
     return () => {
@@ -49,6 +54,7 @@ export function Avatar(props) {
     };
   }, [animation]);
 
+  // Toggle wireframe mode for materials
   useEffect(() => {
     Object.values(materials).forEach((material) => {
       material.wireframe = wireframe;
