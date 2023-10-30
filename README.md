@@ -4,9 +4,21 @@ This is my updated 2023 portfolio showcasing my work as a Softawre Developer! If
 
 ## Tech Stack
 
-Frontend: [React](https://react.dev/), [Vite](https://vitejs.dev/), [Threejs](https://threejs.org/)
+Frontend: 
+[React](https://react.dev/)
+[Vite](https://vitejs.dev/)
+[Threejs](https://threejs.org/)
+[React Three Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
+[R3F Drei](https://github.com/pmndrs/drei)
 
-Deployed using: [Netlify](https://www.netlify.com/?attr=homepage-modal) & [Heroku](https://www.heroku.com/)
+Deployed using: 
+[Netlify](https://www.netlify.com/?attr=homepage-modal)
+
+Other:
+[Mixamo](https://www.mixamo.com/)
+[Ready Player Me](https://readyplayer.me/)
+[Blender](https://www.blender.org/)
+[Poly Pizza](https://poly.pizza/)
 
 ## Screenshots
 
@@ -14,7 +26,10 @@ In process....
 
 ## License, Credit & Attributions
 
-- Images by [Veronica Iezzi](https://blush.design/artists/aG3vXzI3xdJ5mZlbaG9Q/veronica-iezzi) by [Blush](https://blush.design/)
+<!-- Images by [Veronica Iezzi](https://blush.design/artists/aG3vXzI3xdJ5mZlbaG9Q/veronica-iezzi) by [Blush](https://blush.design/) -->
+
+Tutorial by: [Wawa Sensei](https://www.youtube.com/@WawaSensei)
+Inspiration by: [David Heckoff](https://www.david-hckh.com/)
 
 ## About the developer
 
