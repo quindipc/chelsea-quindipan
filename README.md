@@ -10,6 +10,8 @@ Frontend:
 [Threejs](https://threejs.org/)
 [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
 [R3F Drei](https://github.com/pmndrs/drei)
+[Tailwind](https://tailwindcss.com/docs/guides/vite)
+[Framer Motion](https://www.framer.com/motion/introduction/)
 
 Deployed using: 
 [Netlify](https://www.netlify.com/?attr=homepage-modal)
