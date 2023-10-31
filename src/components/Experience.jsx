@@ -13,7 +13,8 @@ export const Experience = () => {
 
   return (
     <>
-      <Room />
+           <OrbitControls />
+      <Room position-y={-1.00}/>
       <Sky />
       <Environment preset="sunset" />
       <group position-y={-1}>
@@ -25,17 +26,17 @@ export const Experience = () => {
           resolution={256}
           color="#000000"
         />
-        <Avatar animation={animation} />
+        <Avatar  scale={1.10} position-x={0.70} position-y={0.15} position-z={-0.55} rotation-y={1.50} animation={animation} />
         {animation === "Typing" && (
           // Box where avatar is typing
           <mesh scale={[0.8, 0.5, 0.8]} position-y={0.25}>
-            <boxGeometry />
+            {/* <boxGeometry /> */}
             <meshStandardMaterial color="#fff" />
           </mesh>
         )}
 
         <mesh scale={5} rotation-x={-Math.PI * 0.5} position-y={-0.001}>
-          <planeGeometry />
+          {/* <planeGeometry /> */}
           <meshStandardMaterial color="#fff" />
         </mesh>
       </group>
