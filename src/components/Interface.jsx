@@ -24,7 +24,7 @@ export const Interface = () => {
 const AboutSection = () => {
     return (
         <Section>
-            <h1 className="text-6xl font-extrabold leading-snug">Hi I'm <br />  <span className="bg-white px-1 italic">Chelsea Quindipan</span></h1>
+            <h1 className="text-6xl font-extrabold leading-snug">Hi I'm <br />  <span className="bg-primary px-1 italic">Chelsea Quindipan</span></h1>
 
             <p className="text-lg text-gray-600 mt-"> I am a Graphic Designer turned Software Developer based in Toronto.
                 <br />
