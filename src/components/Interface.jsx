@@ -15,6 +15,7 @@ export const Interface = () => {
       <AboutSection />
       <SkillsSection />
       {/* Project */}
+      <ProjectSection />
       <ContactSection />
     </div>
   );
@@ -26,7 +27,7 @@ const AboutSection = () => {
       <h1 className="text-6xl text-tertiary font-extrabold leading-snug">
         Hi I'm <br />{" "}
         <img
-          className="bg-primary"
+          className="w-96 bg-primary  p-5 rounded-md"
           src="src/assets/logo/w-logo-cropped.svg"
           alt="white logo"
         />
@@ -96,6 +97,18 @@ const SkillsSection = () => {
   );
 };
 
+const ProjectSection = () => {
+  return (
+    <Section>
+      <h2 className="text-6xl text-tertiary font-extrabold leading-snug">
+        Work
+      </h2>
+
+     
+     
+    </Section>
+  );
+};
 
 const ContactSection = () => { 
 
@@ -104,7 +117,7 @@ const ContactSection = () => {
           <h2 className="text-5xl font-bold">Contact me</h2>
           <div className="mt-8 p-8 rounded-md bg-white w-96 max-w-full">
             <form>
-              <label for="name" className="font-medium text-gray-900 block mb-1">
+              <label htmlFor="name" className="font-medium text-gray-900 block mb-1">
                 Name
               </label>
               <input
@@ -114,7 +127,7 @@ const ContactSection = () => {
                 className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
               />
               <label
-                for="email"
+                htmlFor="email"
                 className="font-medium text-gray-900 block mb-1 mt-8"
               >
                 Email
@@ -126,7 +139,7 @@ const ContactSection = () => {
                 className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
               />
               <label
-                for="email"
+                htmlFor="email"
                 className="font-medium text-gray-900 block mb-1 mt-8"
               >
                 Message
