@@ -33,16 +33,16 @@ In process....
 
 Tutorial by: [Wawa Sensei](https://www.youtube.com/@WawaSensei)
 Inspiration by: [David Heckoff](https://www.david-hckh.com/)
+
+Blender Models: 
 Cat by Poly by Google [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/6dM1J6f6pm9)
 Standing Desk by dook [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/uxIo5ge0pw)
-File Cabinet by J-Toastie [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/9732ObD3OY)
 Wall Art 03 by Jarlan Perez [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/0i3du0jtSu5)
 Office Chair by Quaternius (https://poly.pizza/m/UfKvrZBK6C)
 Monitor by Poly by Google [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/fN_jLmrWXxq)
 Houseplant by Quaternius (https://poly.pizza/m/f6GPjbEgg0)
 Curtains by Poly by Google [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/9bI1TGwmvzD)
 Orchid by Poly by Google [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/59BuDmuEYIZ)
-Bookcase Closed Doors by Kenney (https://poly.pizza/m/6Z0Z91EvJw)
 Computer by CreativeTrio (https://poly.pizza/m/7KNoiQlSxi)
 
 ## About the developer
