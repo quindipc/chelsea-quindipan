@@ -35,9 +35,7 @@ const AboutSection = () => {
     <Section>
       <h1 className="text-6xl text-tertiary font-extrabold leading-snug">
         Hi I'm <br />{" "}
-        <span className="text-white bg-primary py-1 px-1 italic rounded-lg">
-          Chelsea Quindipan
-        </span>
+              <img className="w-25 bg-primary" src="src/assets/logo/w-logo-cropped.svg" alt="white logo" />
       </h1>
 
       <p className="text-lg text-black mt-6">
