@@ -1,6 +1,6 @@
 # Chelsea Quindipan Portfolio
 
-This is my updated 2023 portfolio showcasing my work as a Softawre Developer! If you are interested in viewing my old portfolio which showcases some of my work as a developer as well as a graphic designer, [please visit this repo](https://github.com/quindipc/Chelseas-Front-End-Website).
+This is my updated 2023 portfolio showcasing my work as a Software Developer! If you are interested in viewing my old portfolio which showcases some of my work as a developer as well as a graphic designer, [please visit this repo](https://github.com/quindipc/Chelseas-Front-End-Website).
 
 ## Tech Stack
 
