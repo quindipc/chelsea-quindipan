@@ -14,7 +14,7 @@ export const Experience = () => {
   return (
     <>
            <OrbitControls />
-      <Room position-y={-1.00}/>
+      <Room position-y={-1.00} />
       <Sky />
       <Environment preset="sunset" />
       <group position-y={-1}>
