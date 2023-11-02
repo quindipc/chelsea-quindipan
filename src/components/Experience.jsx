@@ -1,4 +1,4 @@
-import { Environment, OrbitControls, Sky, ContactShadows } from "@react-three/drei";
+import { Environment, Sky, ContactShadows } from "@react-three/drei";
 import { Avatar } from "./Avatar";
 import { Room } from "./Room";
 import { useControls } from "leva";
@@ -13,7 +13,7 @@ export const Experience = () => {
 
   return (
     <>
-           <OrbitControls />
+           {/* <OrbitControls /> */}
       <Room position-y={-1.00} />
       <Sky />
       <Environment preset="sunset" />
