@@ -9,7 +9,6 @@ import javascriptIcon from "../assets/icons/javascript.png";
 import tailwindIcon from "../assets/icons/tailwindcss.png";
 import SassIcon from "../assets/icons/sass.png";
 
-
 const Section = (props) => {
   const { children } = props;
   return (
@@ -88,47 +87,47 @@ const skills = [
   {
     title: "JavaScript",
     icon: javascriptIcon,
-    link: "https://www.javascript.com/"
+    link: "https://www.javascript.com/",
   },
   {
     title: "React",
     icon: reactIcon,
-    link: "https://reactjs.org/"
+    link: "https://reactjs.org/",
   },
   {
     title: "MySQL",
     icon: mysqlIcon,
-    link: "https://www.mysql.com/"
+    link: "https://www.mysql.com/",
   },
   {
     title: "Nodejs",
     icon: nodeIcon,
-    link: "https://nodejs.org/en/"
+    link: "https://nodejs.org/en/",
   },
   {
     title: "Express",
     icon: expressIcon,
-    link: "https://expressjs.com/"
+    link: "https://expressjs.com/",
   },
   {
     title: "TypeScript",
     icon: typescriptIcon,
-    link: "https://www.typescriptlang.org/"
+    link: "https://www.typescriptlang.org/",
   },
   {
     title: "Threejs / React Three Fiber",
     icon: threejsIcon,
-    link: "https://threejs.org/"
+    link: "https://threejs.org/",
   },
   {
     title: "Tailwind CSS",
     icon: tailwindIcon,
-    link:  "https://tailwindcss.com/"
+    link: "https://tailwindcss.com/",
   },
   {
     title: "Sass / SCSS",
     icon: SassIcon,
-    link: "https://sass-lang.com/"
+    link: "https://sass-lang.com/",
   },
 ];
 
@@ -136,31 +135,36 @@ const SkillsSection = () => {
   return (
     <Section>
       <div>
-        <h2 className="text-6xl text-tertiary font-extrabold leading-snug">Skills</h2>
-      <div className="mt-8 space-y-">
-        <div className="grid grid-cols-3 gap-2">
-          {skills.map((skill, index) => (
-            <div className="w-64" key={index}>
-              <a href={skill.link} target="_blank" rel="noopener noreferrer"></a>
-              <motion.img
-                src={skill.icon}
-                alt={skill.title}
-                className="w-20 h-20 m-2"
-                initial={{ opacity: 0 }}
-                whileInView={{
-                  opacity: 1,
-                }}
-                transition={{ duration: 1, delay: 1 }}
+        <h2 className="text-6xl text-tertiary font-extrabold leading-snug">
+          Skills
+        </h2>
+        <div className="mt-8 space-y-">
+          <div className="grid grid-cols-3 gap-2">
+            {skills.map((skill, index) => (
+              <div className="w-64" key={index}>
+                <a
+                  href={skill.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></a>
+                <motion.img
+                  src={skill.icon}
+                  alt={skill.title}
+                  className="w-20 h-20 m-2"
+                  initial={{ opacity: 0 }}
+                  whileInView={{
+                    opacity: 1,
+                  }}
+                  transition={{ duration: 1, delay: 1 }}
                 />
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-          </div>
     </Section>
   );
 };
-
 
 const ProjectSection = () => {
   return (
