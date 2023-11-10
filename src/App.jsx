@@ -6,6 +6,7 @@ import { Interface } from "./components/Interface";
 import { ScrollManager } from "./components/ScrollManager";
 import { Menu } from "./components/Menu";
 import { MotionConfig } from "framer-motion"
+import { Leva } from "leva";
 
 function App() {
   const [section, setSection] = useState(0);
@@ -36,6 +37,7 @@ function App() {
         setMenuOpened={setMenuOpened}
       />
       </MotionConfig>
+      <Leva hidden />
     </>
   );
 }
