@@ -72,6 +72,22 @@ const AboutSection = () => {
         <br />
         technology and design.
       </motion.p>
+      <motion.p
+        className="text-lg text-primary mt-6"
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{ duration: 1, delay: 1.5 }}
+      >
+        {" "}
+        When I am not designing or coding, I love to spend my free time
+        <br />
+        hanging out with my two cats, playing video games or
+        <br />
+        indulge in my favourite shows!
+      </motion.p>
       <motion.button
         className={`bg-primary text-white py-4 px-8 rounded-lg font-bold text-lg mt-6`}
         initial={{ opacity: 0, y: 25 }}
