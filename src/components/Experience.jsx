@@ -44,16 +44,16 @@ export const Experience = (props) => {
           y: section === 0 ? 0 : -1,
         }} 
       >
-        {/* <Room position-y={-1.50} section={section} /> */}
+        {/* <Room  section={section} /> */}
       </motion.group>
 
       
          {/* SKILLS */}
          <motion.group
-        position={[0, -1.5, -10]}
+        position={[1, 1, 1]}
         animate={{
-          z: section === 1 ? 0 : -10,
-          y: section === 1 ? -viewport.height : -1.5,
+          z: section === 1 ? 0 : 0,
+          y: section === 1 ? -viewport.height : -1,
         }}
       >
         <directionalLight position={[-5, 3, 5]} intensity={0.4} />
