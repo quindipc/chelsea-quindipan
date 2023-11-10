@@ -11,6 +11,7 @@ import SassIcon from "../assets/icons/sass.png";
 import linkedinIcon from "../assets/icons/linkedin.png";
 import githubIcon from "../assets/icons/github.png";
 import mailIcon from "../assets/icons/mail.png";
+import chelseaLogo from "../assets/logo/w-logo-cropped.svg"
 
 const Section = (props) => {
   const { children } = props;
@@ -49,8 +50,8 @@ const AboutSection = () => {
         Hi I'm <br />{" "}
         <img
           className="w-96 bg-primary  p-5 rounded-md"
-          src="src/assets/logo/w-logo-cropped.svg"
-          alt="white logo"
+          src={chelseaLogo}
+          alt="Chelsea Quindipan logo"
         />
       </h1>
 
