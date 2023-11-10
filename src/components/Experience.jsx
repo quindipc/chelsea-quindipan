@@ -34,29 +34,23 @@ export const Experience = (props) => {
     state.camera.lookAt(cameraLookAtX.get(), 0, 0);
   });
 
-  let animation;
-switch (section) {
-  case 0:
-    animation = "Typing";
-    break;
-  case 1:
-    animation = "Standing";
-    break;
-  default:
-    animation = "Falling";
-}
   return (
     <>
       <ambientLight intensity={1} />
       <motion.group
-        position={[2, 2, 2.5]}
-        scale={[0.8, 0.8, 0.8]}
-        rotation-y={-Math.PI / 5}
+        //  position={[1.5, 2, 3]}
+        //  scale={[0.9, 0.9, 0.9]}
         animate={{
-          y: section === 0 ? 0 : -1,
+          y: section === 1 ? 0 : -8,
         }}
+        position-x={0.8}
+        position-z={0.5}
+        rotation-y={-Math.PI / 4}
+          // rotation-y={5.3}
+          rotation-x={4.7}
+          scale={[.8,.8,.8]}
       >
-        <Room  section={section} />
+        <Room section={section} />
       </motion.group>
 
       {/* SKILLS */}
@@ -81,7 +75,7 @@ switch (section) {
           </mesh>
         </Float>
         <Float>
-          <mesh scale={[1, 1, 1]} position-y={-18}  position-x={5}>
+          <mesh scale={[1, 1, 1]} position-y={-18} position-x={5}>
             <sphereGeometry />
             <MeshDistortMaterial
               opacity={0.8}
@@ -93,7 +87,7 @@ switch (section) {
           </mesh>
         </Float>
         <Float>
-          <mesh scale={[2, 2, 2]} position-y={-18}  position-x={2}>
+          <mesh scale={[2, 2, 2]} position-y={-18} position-x={2}>
             <boxGeometry />
             <MeshWobbleMaterial
               opacity={0.8}
@@ -109,7 +103,7 @@ switch (section) {
             rotation-x={5}
             position-z={1}
             position-x={1}
-            animation={section === 0 ? "Typing" : "Standing" || "Falling"}
+            animation={section === 0 ? "Falling" : "Standing"}
           />
         </group>
       </motion.group>

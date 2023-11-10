@@ -29,16 +29,16 @@ export function Room(props) {
   
   const textureOpacity = useMotionValue(0);
   const glassTextureOpacity = useMotionValue(0);
-  
-  useEffect(() => {
-    animate(textureOpacity, section === 0 ? 1 : 0);
-    animate(glassTextureOpacity, section === 0 ? 0.42 : 0);
-  }, [section]);
 
-  useFrame(() => {
-    textureMaterial.opacity = textureOpacity.get();
-    textureGlassMaterial.opacity = glassTextureOpacity.get();
-  });
+  // useEffect(() => {
+  //   animate(textureOpacity, section === 0 ? 1 : 0);
+  //   animate(glassTextureOpacity, section === 0 ? 0.42 : 0);
+  // }, [section]);
+
+  // useFrame(() => {
+  //   textureMaterial.opacity = textureOpacity.get();
+  //   textureGlassMaterial.opacity = glassTextureOpacity.get();
+  // });
 
   return (
     <group {...props} dispose={null}>
