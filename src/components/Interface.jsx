@@ -146,17 +146,18 @@ const SkillsSection = () => {
                   href={skill.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                ></a>
+                >
                 <motion.img
                   src={skill.icon}
                   alt={skill.title}
-                  className="w-20 h-20 m-2"
+                  className="w-20 h-20 m-2 transition-transform transform hover:scale-110"
                   initial={{ opacity: 0 }}
                   whileInView={{
                     opacity: 1,
                   }}
                   transition={{ duration: 1, delay: 1 }}
                 />
+                </a>
               </div>
             ))}
           </div>
