@@ -20,79 +20,240 @@ export function Room(props) {
     transparent: true,
     opacity: 1,
   })
+
+  const textureGlassMaterial = new THREE.MeshStandardMaterial({
+    map: texture,
+    transparent: true,
+    opacity: 0.42,
+  });
   
   const textureOpacity = useMotionValue(0);
-
-  useEffect(() => {
-    // Use set method to update opacity based on section
-    textureOpacity.set(section === 0 ? 1 : 0);
-  }, [section]);
+  const glassTextureOpacity = useMotionValue(0);
   
+  useEffect(() => {
+    animate(textureOpacity, section === 0 ? 1 : 0);
+    animate(glassTextureOpacity, section === 0 ? 0.42 : 0);
+  }, [section]);
+
   useFrame(() => {
     textureMaterial.opacity = textureOpacity.get();
-   } );
+    textureGlassMaterial.opacity = glassTextureOpacity.get();
+  });
 
   return (
     <group {...props} dispose={null}>
-      <group position={[7.958, -0.033, -0.661]} rotation={[0, 1.553, 0]}>
-        <group position={[-0.456, 0, -6.33]} rotation={[-Math.PI / 2, 0, Math.PI / 2]}>
-          <mesh geometry={nodes.Desk_1.geometry} material={materials.BlackCoatSteel} />
-          <mesh geometry={nodes.Desk_2.geometry} material={materials.GrayPlastic} />
-          <mesh geometry={nodes.Desk_3.geometry} material={materials.WhiteSteelScrew} />
-          <mesh geometry={nodes.Desk_4.geometry} material={materials.BlackPlastic} />
-          <mesh geometry={nodes.Desk_5.geometry} material={materials.BlackWood} />
-        </group>
-        <mesh geometry={nodes.Mouse001.geometry} material={materials['Material.001']} position={[-.8, 0.942, -6.6]} rotation={[-Math.PI / 2, 0, -2.69]} />
-        <mesh geometry={nodes.Mousepad001.geometry} material={materials.Mousepad} position={[-.8, 0.944, -6.6]} rotation={[-Math.PI / 2, 0, Math.PI / 2]} />
+      <group position={[-0.074, 0, -1.521]} rotation={[0, -1.571, 0]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane001_Plane002_BlackWood001.geometry}
+          material={materials["BlackWood.001"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane001_Plane002_BlackWood001_1.geometry}
+          material={materials["BlackCoatSteel.001"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane001_Plane002_BlackWood001_2.geometry}
+          material={materials["GrayPlastic.001"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane001_Plane002_BlackWood001_3.geometry}
+          material={materials["WhiteSteelScrew.001"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane001_Plane002_BlackWood001_4.geometry}
+          material={materials["BlackPlastic.001"]}
+        />
       </group>
-      <group position={[1.377, 1.013, -0.777]} rotation={[0.015, -0.803, 0.036]} scale={1.536}>
-        <mesh geometry={nodes.Computer.geometry} material={textureMaterial} position={[0.068, -0.059, -0.232]} rotation={[0.022, -0.802, 0.021]} />
+      <group position={[-0.044, 0.981, -1.346]} rotation={[0, -0.165, 0]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.mesh425587018.geometry}
+          material={materials["mat21.004"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.mesh425587018_1.geometry}
+          material={materials["mat22.001"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.mesh425587018_2.geometry}
+          material={materials["mat9.002"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.mesh425587018_3.geometry}
+          material={materials["mat16.001"]}
+        />
       </group>
-      <group position={[-1.656, 0.005, -1.782]} scale={2.009}>
-        <group position={[1.561, 0, 1.558]} rotation={[-1.545, -0.034, -1.712]}>
-          <mesh geometry={nodes.Houseplant_1_1.geometry} material={materials['Black.001']} />
-          <mesh geometry={nodes.Houseplant_1_2.geometry} material={materials.Brown} />
-          <mesh geometry={nodes.Houseplant_1_3.geometry} material={materials.Plant_Green} />
-        </group>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Comp_Mouse.geometry}
+        material={materials["lambert3SG.003"]}
+      />
+      <group position={[-0.78, 1.071, -1.61]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.mesh24448074.geometry}
+          material={materials["mat9.003"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.mesh24448074_1.geometry}
+          material={materials["mat20.001"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.mesh24448074_2.geometry}
+          material={materials["mat21.005"]}
+        />
       </group>
-      <group position={[1.237, 0.912, -.8]} rotation={[-2.639, 1.561, 2.648]} scale={2.10}>
-        <mesh geometry={nodes.computerKeyboard_2.geometry} material={materials.metalDark} />
-        <mesh geometry={nodes.computerKeyboard_2_1.geometry} material={materials.metalMedium} />
+      <group
+        position={[-2.019, -0.042, -1.526]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={1.329}
+      >
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Houseplant_7_1.geometry}
+          material={materials["Black.001"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Houseplant_7_2.geometry}
+          material={materials["Brown.001"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Houseplant_7_3.geometry}
+          material={materials["Plant_Green.001"]}
+        />
       </group>
-      <group position={[1.237, 0.912, -.8]} rotation={[-2.639, 1.561, 2.648]} scale={2.10}>
-        <mesh geometry={nodes.computerKeyboard_3.geometry} material={materials.metalMedium} />
-        <mesh geometry={nodes.computerKeyboard_3_1.geometry} material={materials.metalDark} />
+      <group position={[-0.278, 0, -0.708]} rotation={[0, -0.376, 0]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Node-Mesh"].geometry}
+          material={materials.Office_Cha}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Node-Mesh_1"].geometry}
+          material={materials.Office_Cha_1}
+        />
       </group>
-      <mesh geometry={nodes.Cat.geometry} material={materials.Brown} position={[1.617, 0.378, -1.828]} rotation={[0.083, -1.014, 0.163]} scale={1.491} />
-      <mesh geometry={nodes.Curtains.geometry}material={textureMaterial} position={[0.012, -0.008, -2.023]} />
-      <mesh geometry={nodes.Monitor.geometry} material={textureMaterial} position={[1.789, 0.905, -0.408]} rotation={[0.406, -1.555, 0.403]} />
-      <group position={[1.871, 0.928, 0.374]}>
-        <mesh geometry={nodes.Box003_1.geometry} material={materials['05___Default']} />
-        <mesh geometry={nodes.Box003_1_1.geometry} material={materials['04___Default']} />
-        <mesh geometry={nodes.Box003_1_2.geometry} material={materials['02___Default']} />
-        <mesh geometry={nodes.Box003_1_3.geometry} material={materials['03___Default']} />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Curtains.geometry}
+        material={materials.Mat}
+        position={[-2.659, -0.023, 0.015]}
+        rotation={[-2.047, -1.555, -2.049]}
+        scale={0.031}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Monitor.geometry}
+        material={materials.lambert3SG}
+        position={[0.084, 0.989, -1.707]}
+        rotation={[-0.037, -0.141, 0.007]}
+        scale={0.002}
+      />
+      <group
+        position={[-0.024, 2.311, -2.17]}
+        rotation={[3.136, -0.007, -1.552]}
+        scale={2.303}
+      >
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Node-Mesh002"].geometry}
+          material={materials["mat23.002"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Node-Mesh002_1"].geometry}
+          material={materials["mat21.001"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Node-Mesh002_2"].geometry}
+          material={materials.mat7}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Node-Mesh002_3"].geometry}
+          material={materials.mat6}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Node-Mesh002_4"].geometry}
+          material={materials["mat17.001"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Node-Mesh002_5"].geometry}
+          material={materials["mat24.001"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Node-Mesh002_6"].geometry}
+          material={materials.mat25}
+        />
       </group>
-      <group position={[1.871, 0.928, 0.374]}>
-        <mesh geometry={nodes.GeoSphere001_1.geometry} material={materials['07___Default']} />
-        <mesh geometry={nodes.GeoSphere001_1_1.geometry} material={materials.Material__289} />
-      </group>
-      <group position={[2.032, 1.983, -0.139]} rotation={[1.762, 1.559, -0.192]}>
-        <mesh geometry={nodes['Node-Mesh002'].geometry} material={materials.mat23} />
-        <mesh geometry={nodes['Node-Mesh002_1'].geometry} material={materials.mat21} />
-        <mesh geometry={nodes['Node-Mesh002_2'].geometry} material={materials.mat7} />
-        <mesh geometry={nodes['Node-Mesh002_3'].geometry} material={materials.mat6} />
-        <mesh geometry={nodes['Node-Mesh002_4'].geometry} material={materials.mat17} />
-        <mesh geometry={nodes['Node-Mesh002_5'].geometry} material={materials.mat24} />
-        <mesh geometry={nodes['Node-Mesh002_6'].geometry} material={materials.mat25} />
-      </group>
-      <group position={[0.73, 0.001, -0.499]} rotation={[-1.557, 0.044, 1.617]}>
-        <mesh geometry={nodes.OfficeChair_1.geometry} material={materials.Grey} />
-        <mesh geometry={nodes.OfficeChair_2.geometry} material={materials.Black} />
-        <mesh geometry={nodes.OfficeChair_3.geometry} material={materials.Chair} />
-      </group>
-      <mesh geometry={nodes.Plane_1.geometry} material={materials.Wall} />
-      <mesh geometry={nodes.Plane_2.geometry} material={materials.Floor} />
-      <mesh geometry={nodes.Plane_3.geometry} material={materials.Floor} />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Plane001.geometry}
+        material={materials.Floor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Plane001_1.geometry}
+        material={materials.White}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Plane001_2.geometry}
+        material={materials.Wall}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Plane001_3.geometry}
+        material={materials.Glass}
+      />
     </group>
   )
 }

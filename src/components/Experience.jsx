@@ -11,7 +11,7 @@ import { motion } from "framer-motion-3d";
 import { useEffect } from "react";
 import { framerMotionConfig } from "../config";
 import { Avatar } from "./Avatar";
-// import { Room } from "./Room";
+import { Room } from "./Room";
 
 export const Experience = (props) => {
   const { section, menuOpened } = props;
@@ -33,6 +33,18 @@ export const Experience = (props) => {
     state.camera.position.x = cameraPositionX.get();
     state.camera.lookAt(cameraLookAtX.get(), 0, 0);
   });
+
+  let animation;
+switch (section) {
+  case 0:
+    animation = "Typing";
+    break;
+  case 1:
+    animation = "Standing";
+    break;
+  default:
+    animation = "Falling";
+}
   return (
     <>
       <ambientLight intensity={1} />
@@ -44,7 +56,7 @@ export const Experience = (props) => {
           y: section === 0 ? 0 : -1,
         }}
       >
-        {/* <Room  section={section} /> */}
+        <Room  section={section} />
       </motion.group>
 
       {/* SKILLS */}
@@ -97,7 +109,7 @@ export const Experience = (props) => {
             rotation-x={5}
             position-z={1}
             position-x={1}
-            animation={section === 0 ? "Falling" : "Standing"}
+            animation={section === 0 ? "Typing" : "Standing" || "Falling"}
           />
         </group>
       </motion.group>
