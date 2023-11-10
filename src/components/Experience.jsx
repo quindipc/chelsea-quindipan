@@ -11,17 +11,28 @@ import { motion } from "framer-motion-3d";
 import { useEffect } from "react";
 import { framerMotionConfig } from "../config";
 import { Avatar } from "./Avatar";
-import { Room } from "./Room";
+// import { Room } from "./Room";
 
 export const Experience = (props) => {
-  const { animation } = useControls({
-    animation: {
-      value: "Typing",
-      options: ["Typing", "Falling", "Standing"],
-    },
-  });
+  const { section, menuOpened } = props;
+  const { viewport } = useThree();
 
-  const { section } = props;
+  const cameraPositionX = useMotionValue();
+  const cameraLookAtX = useMotionValue();
+
+  useEffect(() => {
+    animate(cameraPositionX, menuOpened ? -5 : 0, {
+      ...framerMotionConfig,
+    });
+    animate(cameraLookAtX, menuOpened ? 5 : 0, {
+      ...framerMotionConfig,
+    });
+  }, [menuOpened]);
+
+  useFrame((state) => {
+    state.camera.position.x = cameraPositionX.get();
+    state.camera.lookAt(cameraLookAtX.get(), 0, 0);
+  });
   return (
     <>
       <ambientLight intensity={1} />
@@ -33,21 +44,59 @@ export const Experience = (props) => {
           y: section === 0 ? 0 : -1,
         }} 
       >
-        <Room position-y={-1.50} section={section} />
+        {/* <Room position-y={-1.50} section={section} /> */}
       </motion.group>
 
-      {/* OLD CODE FOR AVATAR */}
-      <group position-y={-1}>
-        <Avatar  scale={1.10} position-x={2.8} position-y={-.31} position-z={2.5} rotation-y={7} animation={animation} />
-        {animation === "Typing" && (
-          <mesh scale={[0.8, 0.5, 0.8]} position-y={3}>
-            <meshStandardMaterial color="#fff" />
+      
+         {/* SKILLS */}
+         <motion.group
+        position={[0, -1.5, -10]}
+        animate={{
+          z: section === 1 ? 0 : -10,
+          y: section === 1 ? -viewport.height : -1.5,
+        }}
+      >
+        <directionalLight position={[-5, 3, 5]} intensity={0.4} />
+        <Float>
+          <mesh position={[1, -3, -15]} scale={[2, 2, 2]}>
+            <sphereGeometry />
+            <MeshDistortMaterial
+              opacity={0.8}
+              transparent
+              distort={0.4}
+              speed={4}
+              color={"red"}
+            />
           </mesh>
-        )}
-        {/* <mesh scale={5} rotation-x={-Math.PI * 0.5} position-y={-0.001}>
-          <meshStandardMaterial color="#fff" />
-        </mesh> */}
-      </group>
+        </Float>
+        <Float>
+          <mesh scale={[3, 3, 3]} position={[3, 1, -18]}>
+            <sphereGeometry />
+            <MeshDistortMaterial
+              opacity={0.8}
+              transparent
+              distort={1}
+              speed={5}
+              color="yellow"
+            />
+          </mesh>
+        </Float>
+        <Float>
+          <mesh scale={[1.4, 1.4, 1.4]} position={[-3, -1, -11]}>
+            <boxGeometry />
+            <MeshWobbleMaterial
+              opacity={0.8}
+              transparent
+              factor={1}
+              speed={5}
+              color={"blue"}
+            />
+          </mesh>
+        </Float>
+        <group scale={[2,2,2]} position-y={-10}>
+          <Avatar rotation-x={5} position-z={1} position-x={1} animation={section === 0 ? "Falling" : "Standing"} />
+        </group>
+      </motion.group>
     </>
   );
 };
