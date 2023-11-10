@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Scroll, ScrollControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import { Cursor } from "./components/Cursor";
 import { Experience } from "./components/Experience";
 import { Interface } from "./components/Interface";
 import { ScrollManager } from "./components/ScrollManager";
@@ -35,7 +36,8 @@ function App() {
         onSectionChange={setSection}
         menuOpened={menuOpened}
         setMenuOpened={setMenuOpened}
-      />
+        />
+               <Cursor />
       </MotionConfig>
       <Leva hidden />
     </>
