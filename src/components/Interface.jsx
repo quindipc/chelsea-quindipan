@@ -7,7 +7,7 @@ import threejsIcon from "../assets/icons/threejs.png";
 import typescriptIcon from "../assets/icons/typescript.png";
 import javascriptIcon from "../assets/icons/javascript.png";
 import tailwindIcon from "../assets/icons/tailwindcss.png";
-import sassIcon from "../assets/icons/sass.png";
+import sassIcon from "../assets/icons/sass-icon.png";
 import linkedinIcon from "../assets/icons/linkedin.png";
 import githubIcon from "../assets/icons/github.png";
 import mailIcon from "../assets/icons/mail.png";
