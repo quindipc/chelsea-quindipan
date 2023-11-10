@@ -38,18 +38,17 @@ export const Experience = (props) => {
       <ambientLight intensity={1} />
       <motion.group
         position={[2, 2, 2.5]}
-        scale={[.8, .8, .8]}
+        scale={[0.8, 0.8, 0.8]}
         rotation-y={-Math.PI / 5}
         animate={{
           y: section === 0 ? 0 : -1,
-        }} 
+        }}
       >
         {/* <Room  section={section} /> */}
       </motion.group>
 
-      
-         {/* SKILLS */}
-         <motion.group
+      {/* SKILLS */}
+      <motion.group
         position={[1, 1, 1]}
         animate={{
           z: section === 1 ? 0 : 0,
@@ -58,43 +57,48 @@ export const Experience = (props) => {
       >
         <directionalLight position={[-5, 3, 5]} intensity={0.4} />
         <Float>
-          <mesh position={[1, -3, -15]} scale={[2, 2, 2]}>
+          <mesh scale={[1, 1, 1]} position-y={-18} position-x={4}>
             <sphereGeometry />
             <MeshDistortMaterial
               opacity={0.8}
               transparent
               distort={0.4}
-              speed={4}
-              color={"red"}
+              speed={2}
+              color={"#F06193"}
             />
           </mesh>
         </Float>
         <Float>
-          <mesh scale={[3, 3, 3]} position={[3, 1, -18]}>
+          <mesh scale={[1, 1, 1]} position-y={-18}  position-x={5}>
             <sphereGeometry />
             <MeshDistortMaterial
               opacity={0.8}
               transparent
               distort={1}
-              speed={5}
-              color="yellow"
+              speed={2}
+              color={"#F8BCD3"}
             />
           </mesh>
         </Float>
         <Float>
-          <mesh scale={[1.4, 1.4, 1.4]} position={[-3, -1, -11]}>
+          <mesh scale={[2, 2, 2]} position-y={-18}  position-x={2}>
             <boxGeometry />
             <MeshWobbleMaterial
               opacity={0.8}
               transparent
               factor={1}
-              speed={5}
-              color={"blue"}
+              speed={2}
+              color={"#34344A"}
             />
           </mesh>
         </Float>
-        <group scale={[2,2,2]} position-y={-10}>
-          <Avatar rotation-x={5} position-z={1} position-x={1} animation={section === 0 ? "Falling" : "Standing"} />
+        <group scale={[2, 2, 2]} position-y={-10}>
+          <Avatar
+            rotation-x={5}
+            position-z={1}
+            position-x={1}
+            animation={section === 0 ? "Falling" : "Standing"}
+          />
         </group>
       </motion.group>
     </>
