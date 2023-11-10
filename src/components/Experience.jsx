@@ -50,7 +50,7 @@ export const Experience = (props) => {
           rotation-x={4.7}
           scale={[.8,.8,.8]}
       >
-        <Room section={section} />
+        {/* <Room section={section} /> */}
       </motion.group>
 
       {/* SKILLS */}
@@ -103,7 +103,7 @@ export const Experience = (props) => {
             rotation-x={5}
             position-z={1}
             position-x={1}
-            animation={section === 0 ? "Falling" : "Standing"}
+            animation={section === 0 ? "Typing" : "Standing"}
           />
         </group>
       </motion.group>
