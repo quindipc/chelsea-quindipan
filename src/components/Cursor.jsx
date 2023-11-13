@@ -14,12 +14,15 @@ export const Cursor = () => {
   const animate = () => {
     let distX = mouseX - outlineX;
     let distY = mouseY - outlineY;
-
+  
     outlineX = outlineX + distX * CURSOR_SPEED;
     outlineY = outlineY + distY * CURSOR_SPEED;
-
-    cursorOutline.current.style.left = `${outlineX}px`;
-    cursorOutline.current.style.top = `${outlineY}px`;
+  
+    if (cursorOutline.current) {
+      cursorOutline.current.style.left = `${outlineX}px`;
+      cursorOutline.current.style.top = `${outlineY}px`;
+    }
+  
     requestAnimationFrame(animate);
   };
 
