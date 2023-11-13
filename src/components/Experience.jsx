@@ -100,9 +100,10 @@ export const Experience = (props) => {
         </Float>
         <group scale={[2, 2, 2]} position-y={-10}>
           <Avatar
-            rotation-x={5}
+            // rotation-x={5}
             position-z={1}
             position-x={1}
+            rotation-x={-Math.PI / 1}
             animation={section === 0 ? "Standing" : "Typing"}
           />
         </group>
