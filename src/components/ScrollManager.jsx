@@ -33,17 +33,25 @@ export const ScrollManager = (props) => {
     }
 
     const curSection = Math.floor(data.scroll.current * data.pages);
-    if (data.scroll.current > lastScroll.current && curSection === 0) {
+
+ if (data.scroll.current > lastScroll.current) {
+    // Scrolling down
+    if (curSection === 0) {
+      onSectionChange(1);
+    } else if (curSection === 1) {
+      onSectionChange(2);
+    }
+  } else if (data.scroll.current < lastScroll.current) {
+    // Scrolling up
+    if (curSection === 1) {
+      onSectionChange(0);
+    } else if (curSection === 2) {
       onSectionChange(1);
     }
-    if (
-      data.scroll.current < lastScroll.current &&
-      data.scroll.current < 1 / (data.pages - 1)
-    ) {
-      onSectionChange(0);
-    }
-    lastScroll.current = data.scroll.current;
-  });
+  }
+
+  lastScroll.current = data.scroll.current;
+});
 
   return null;
 };
