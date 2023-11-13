@@ -17,7 +17,7 @@ export function Avatar(props) {
     wireframe: false,
   });
   const group = useRef();
-  const { nodes, materials } = useGLTF("models/Avatar.glb");
+  const { nodes, materials } = useGLTF("../models/Avatar.glb");
 
   // Load various animations for the avatar
   const { animations: typingAnimation } = useFBX("animations/Typing.fbx");

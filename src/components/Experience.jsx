@@ -17,8 +17,8 @@ export const Experience = (props) => {
   const { section, menuOpened } = props;
   const { viewport } = useThree();
 
-  const cameraPositionX = useMotionValue();
-  const cameraLookAtX = useMotionValue();
+  const cameraPositionX = useMotionValue(0);
+  const cameraLookAtX = useMotionValue(0);
 
   useEffect(() => {
     animate(cameraPositionX, menuOpened ? -5 : 0, {
