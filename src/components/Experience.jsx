@@ -103,7 +103,7 @@ export const Experience = (props) => {
             rotation-x={5}
             position-z={1}
             position-x={1}
-            animation={section === 0 ? "Typing" : "Standing"}
+            animation={section === 0 ? "Standing" : "Typing"}
           />
         </group>
       </motion.group>
