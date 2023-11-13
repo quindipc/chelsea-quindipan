@@ -37,11 +37,29 @@ export const Interface = () => {
       <AboutSection />
       <SkillsSection />
       <ProjectSection />
-      <SocialsSection />
+      {/* <SocialsSection /> */}
       {/* <ContactSection /> */}
     </div>
   );
 };
+
+const socials = [
+  {
+    title: "LinkedIn",
+    icon: linkedinIcon,
+    link: "https://www.linkedin.com/in/chelsea-quindipan/",
+  },
+  {
+    title: "GitHub",
+    icon: githubIcon,
+    link: "https://github.com/quindipc",
+  },
+  {
+    title: "Email",
+    icon: mailIcon,
+    link: "mailto:quindipc@gmail.com",
+  },
+];
 
 const AboutSection = () => {
   return (
@@ -89,7 +107,29 @@ const AboutSection = () => {
         <br />
         indulge in my favourite shows!
       </motion.p>
-      <motion.button
+      <div className="grid grid-cols-3 gap-2  mt-6">
+            {socials.map((social, index) => (
+              <div className="w-50" key={index}>
+                <a
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                <motion.img
+                  src={social.icon}
+                  alt={social.title}
+                  className="w-20 h-20 m-2 transition-transform transform hover:scale-110"
+                  initial={{ opacity: 0 }}
+                  whileInView={{
+                    opacity: 1,
+                  }}
+                  transition={{ duration: 1, delay: 1 }}
+                />
+                </a>
+              </div>
+            ))}
+          </div>
+      {/* <motion.button
         className={`bg-primary text-white py-4 px-8 rounded-lg font-bold text-lg mt-6`}
         initial={{ opacity: 0, y: 25 }}
         whileInView={{
@@ -99,7 +139,7 @@ const AboutSection = () => {
         transition={{ duration: 1, delay: 2 }}
       >
         Contact me
-      </motion.button>
+      </motion.button> */}
     </Section>
   );
 };
@@ -209,59 +249,43 @@ const ProjectSection = () => {
   );
 };
 
-const socials = [
-  {
-    title: "LinkedIn",
-    icon: linkedinIcon,
-    link: "https://www.linkedin.com/in/chelsea-quindipan/",
-  },
-  {
-    title: "GitHub",
-    icon: githubIcon,
-    link: "https://github.com/quindipc",
-  },
-  {
-    title: "Email",
-    icon: mailIcon,
-    link: "mailto:quindipc@gmail.com",
-  },
-];
 
-const SocialsSection = () => {
-  return (
-    <Section>
-      <div>
-        <h2 className="text-6xl text-tertiary font-extrabold leading-snug">
-         Socials
-        </h2>
-        <div className="mt-8 space-y-">
-          <div className="grid grid-cols-3 gap-2">
-            {socials.map((social, index) => (
-              <div className="w-64" key={index}>
-                <a
-                  href={social.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                <motion.img
-                  src={social.icon}
-                  alt={social.title}
-                  className="w-20 h-20 m-2 transition-transform transform hover:scale-110"
-                  initial={{ opacity: 0 }}
-                  whileInView={{
-                    opacity: 1,
-                  }}
-                  transition={{ duration: 1, delay: 1 }}
-                />
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </Section>
-  );
-};
+
+// const SocialsSection = () => {
+//   return (
+//     <Section>
+//       <div>
+//         <h2 className="text-6xl text-tertiary font-extrabold leading-snug">
+//          Socials
+//         </h2>
+//         <div className="mt-8 space-y-">
+//           <div className="grid grid-cols-3 gap-2">
+//             {socials.map((social, index) => (
+//               <div className="w-64" key={index}>
+//                 <a
+//                   href={social.link}
+//                   target="_blank"
+//                   rel="noopener noreferrer"
+//                 >
+//                 <motion.img
+//                   src={social.icon}
+//                   alt={social.title}
+//                   className="w-20 h-20 m-2 transition-transform transform hover:scale-110"
+//                   initial={{ opacity: 0 }}
+//                   whileInView={{
+//                     opacity: 1,
+//                   }}
+//                   transition={{ duration: 1, delay: 1 }}
+//                 />
+//                 </a>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//     </Section>
+//   );
+// };
 
 // const ContactSection = () => {
 //   return (
