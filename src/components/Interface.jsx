@@ -13,8 +13,9 @@ import linkedinIcon from "../assets/icons/linkedin.png";
 import githubIcon from "../assets/icons/github.png";
 import mailIcon from "../assets/icons/mail.png";
 import chelseaLogo from "../assets/logo/w-logo-cropped.svg";
-import mythicTails from "../assets/images/mythic-tails.png"; 
+import mythicTails from "../assets/images/mythic-tails.png";
 import insightsAI from "../assets/images/insights.png";
+import coffeeChat from "../assets/images/coffeechat.png";
 
 const Section = (props) => {
   const { children } = props;
@@ -77,7 +78,7 @@ const AboutSection = () => {
       </h1>
 
       <motion.p
-        className="text-lg text-black mt-6"
+        className="text-2xl text-black mt-6"
         initial={{ opacity: 0, y: 25 }}
         whileInView={{
           opacity: 1,
@@ -95,7 +96,7 @@ const AboutSection = () => {
         technology and design.
       </motion.p>
       <motion.p
-        className="text-lg text-primary mt-6"
+        className="text-2xl text-primary mt-6"
         initial={{ opacity: 0, y: 25 }}
         whileInView={{
           opacity: 1,
@@ -128,17 +129,6 @@ const AboutSection = () => {
           </div>
         ))}
       </div>
-      {/* <motion.button
-        className={`bg-primary text-white py-4 px-8 rounded-lg font-bold text-lg mt-6`}
-        initial={{ opacity: 0, y: 25 }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{ duration: 1, delay: 2 }}
-      >
-        Contact me
-      </motion.button> */}
     </Section>
   );
 };
@@ -225,33 +215,40 @@ const SkillsSection = () => {
 
 const projects = [
   {
-    title: "Mythic Tails: Cursebreaker's Odyssey - BrainStation Capstone Project",
+    title: "CoffeeChat - makeitMVP Project",
+    image: coffeeChat,
+    link: "https://github.com/MakeitMVP/CoffeeChat",
+    description:
+      "Coffee Chat is a platform designed to revolutionize the way professionals network and build meaningful connections.",
+  },
+  {
+    title:
+      "Mythic Tails: Cursebreaker's Odyssey - BrainStation Capstone Project",
     image: mythicTails,
     link: "https://mythic-tails-cursebreakers-odyssey.netlify.app/",
-    description: "Mythic Tails: Cursebreaker’s Odyssey is an immersive text adventure game that takes players on a captivating journey through a cursed realm. In this RPG-style game, players become heroes tasked with breaking the curse and saving the land of Ethoria. Throughout the game, players encounter mythical creatures, each plagued with unique curses, and must decide between saving the creatures or confronting the evil being behind the curse.",
-
+    description:
+      "Mythic Tails: Cursebreaker’s Odyssey is an immersive text adventure game that takes players on a captivating journey through a cursed realm.",
   },
   {
     title: "Insights AI - Google Hackathon",
     image: insightsAI,
     link: "https://github.com/amirkiaml/Google-Industry-Day",
-    description: "Insights provides users with a unique glimpse behind the curtain, offering clear explanations of how AI enhances their experience, utilizes their data, and delivers the results they receive. With Insights, we aim to foster transparency and empower users to confidently embrace AI-related features.",
-  },
-  {
-    title: "CoffeeChat - makeitMVP Project",
-    image: "http://placekitten.com/700/500",
-    link: "https://mythic-tails-cursebreakers-odyssey.netlify.app/",
-    description: "Description for Project 1...",
+    description:
+      "Insights is a powerful widget integrated into the Google platform that provides users with clear explanations of how AI enhances their experience, utilizes their data, and delivers the results they receive ",
   },
 ];
 
 const ProjectSlide = ({ title, description, image, link }) => {
   return (
-    <div>
-      <h2 className="text-4xl text-tertiary font-bold">{title}</h2>
-      <p className="text-lg text-black mt-2">{description}</p>
+    <div className="space-y-4 w-1/2">
+      <h3 className="text-3xl font-bold">{title}</h3>
+      <p className="text-tertiary text-2xl">{description}</p>
       <a href={link}>
-      <img className="rounded-lg h-auto max-w-lg transition-transform transform hover:scale-110" src={image} alt="project-image" />
+      <img
+        className="rounded-lg object-cover h-96 w-fit transition-transform transform hover:scale-110"
+        src={image}
+        alt={title}
+      />
       </a>
     </div>
   );
@@ -309,7 +306,7 @@ const ProjectSection = () => {
       <h2 className="text-6xl text-tertiary font-extrabold leading-snug">
         Projects
       </h2>
-      <div className="text-lg text-black mt-6">
+      <div className="text-lg text-black mt-6 space-y-4">
         <motion.div
           custom={1}
           variants={variants}
@@ -329,9 +326,32 @@ const ProjectSection = () => {
         </motion.div>
       </div>
 
-      <div className="flex justify-between mt-4">
-        <button onClick={prevProject}>&lt; Prev</button>
-        <button onClick={nextProject}>Next &gt;</button>
+      <div className="flex justify-center mt-4">
+        <motion.button
+          className={`bg-primary text-white w-40 py-4 px-8 rounded-lg font-bold text-lg mt-6`}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{ duration: 1, delay: 2 }}
+          onClick={prevProject}
+        >
+          Previous
+        </motion.button>
+
+        <motion.button
+          className={`bg-primary text-white w-40 py-4 px-8 ml-6 rounded-lg font-bold text-lg mt-6`}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{ duration: 1, delay: 2 }}
+          onClick={nextProject}
+        >
+          Next
+        </motion.button>
       </div>
     </Section>
   );
