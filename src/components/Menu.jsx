@@ -1,5 +1,9 @@
 export const Menu = (props) => {
-    const { onSectionChange, menuOpened, setMenuOpened } = props;
+  const { onSectionChange, menuOpened, setMenuOpened } = props;
+  
+    const closeMenu = () => {
+      setMenuOpened(false);
+    };
   
     return (
       <>
@@ -28,11 +32,9 @@ export const Menu = (props) => {
         ${menuOpened ? "w-60" : "w-0"}`}
         >
           <div className="text-tertiary flex-1 flex items-start justify-center flex-col gap-6 p-8">
-            <MenuButton label="About" onClick={() => onSectionChange(0)} />
-            <MenuButton label="Skills" onClick={() => onSectionChange(1)} />
-            <MenuButton label="Projects" onClick={() => onSectionChange(2)} />
-            {/* <MenuButton label="Socials" onClick={() => onSectionChange(3)} /> */}
-            {/* <MenuButton label="Contact" onClick={() => onSectionChange(4)} /> */}
+          <MenuButton label="About" onClick={() => { onSectionChange(0); closeMenu(); }} />
+          <MenuButton label="Skills" onClick={() => { onSectionChange(1); closeMenu(); }} />
+          <MenuButton label="Projects" onClick={() => { onSectionChange(2); closeMenu(); }} />
           </div>
         </div>
       </>
