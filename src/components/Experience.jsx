@@ -46,9 +46,9 @@ export const Experience = (props) => {
         position-x={0.8}
         position-z={0.5}
         rotation-y={-Math.PI / 4}
-          // rotation-y={5.3}
-          rotation-x={4.7}
-          scale={[.8,.8,.8]}
+        // rotation-y={5.3}
+        rotation-x={4.7}
+        scale={[0.8, 0.8, 0.8]}
       >
         {/* <Room section={section} /> */}
       </motion.group>
@@ -62,42 +62,84 @@ export const Experience = (props) => {
         }}
       >
         <directionalLight position={[-5, 3, 5]} intensity={0.4} />
-        <Float>
-          <mesh scale={[1, 1, 1]} position-y={-18} position-x={4}>
-            <sphereGeometry />
-            <MeshDistortMaterial
-              opacity={0.8}
-              transparent
-              distort={0.4}
-              speed={2}
-              color={"#F06193"}
-            />
-          </mesh>
-        </Float>
-        <Float>
-          <mesh scale={[1, 1, 1]} position-y={-18} position-x={5}>
-            <sphereGeometry />
-            <MeshDistortMaterial
-              opacity={0.8}
-              transparent
-              distort={1}
-              speed={2}
-              color={"#F8BCD3"}
-            />
-          </mesh>
-        </Float>
-        <Float>
-          <mesh scale={[2, 2, 2]} position-y={-18} position-x={2}>
-            <boxGeometry />
-            <MeshWobbleMaterial
-              opacity={0.8}
-              transparent
-              factor={1}
-              speed={2}
-              color={"#34344A"}
-            />
-          </mesh>
-        </Float>
+
+        <group position-x={-5}>
+          <Float>
+            <mesh scale={[1, 1, 1]} position-y={-18} position-x={4}>
+              <sphereGeometry />
+              <MeshDistortMaterial
+                opacity={0.8}
+                transparent
+                distort={0.4}
+                speed={2}
+                color={"#F06193"}
+              />
+            </mesh>
+          </Float>
+          <Float>
+            <mesh scale={[1, 1, 1]} position-y={-18} position-x={5}>
+              <sphereGeometry />
+              <MeshDistortMaterial
+                opacity={0.8}
+                transparent
+                distort={1}
+                speed={2}
+                color={"#F8BCD3"}
+              />
+            </mesh>
+          </Float>
+          <Float>
+            <mesh scale={[2, 2, 2]} position-y={-18} position-x={2}>
+              <boxGeometry />
+              <MeshWobbleMaterial
+                opacity={0.8}
+                transparent
+                factor={1}
+                speed={2}
+                color={"#34344A"}
+              />
+            </mesh>
+          </Float>
+        </group>
+
+        <group position-x={2}>
+          <Float>
+            <mesh scale={[1, 1, 1]} position-y={-18} position-x={4}>
+              <sphereGeometry />
+              <MeshDistortMaterial
+                opacity={0.8}
+                transparent
+                distort={1}
+                speed={2}
+                color={"#F06193"}
+              />
+            </mesh>
+          </Float>
+          <Float>
+            <mesh scale={[1, 1, 1]} position-y={-18} position-x={3}>
+              <sphereGeometry />
+              <MeshDistortMaterial
+                opacity={0.8}
+                transparent
+                distort={1.7}
+                speed={1}
+                color={"#F8BCD3"}
+              />
+            </mesh>
+          </Float>
+          <Float>
+            <mesh scale={[3, 5, 2]} position-y={-18} position-x={1}>
+              <boxGeometry />
+              <MeshWobbleMaterial
+                opacity={0.8}
+                transparent
+                factor={1}
+                speed={1}
+                color={"#34344A"}
+              />
+            </mesh>
+          </Float>
+        </group>
         <group scale={[2, 2, 2]} position-y={-10} position-x={-1}>
           {/* <Avatar
             // rotation-x={5}
