@@ -141,21 +141,30 @@ export const Experience = (props) => {
           </Float>
         </group>
         <group scale={[2, 2, 2]} position-y={-10} position-x={-1}>
-          {/* <Avatar
+          <Avatar
             // rotation-x={5}
             position-z={1}
             position-x={1}
             rotation-x={-Math.PI / 1}
+            // animation={
+            //   section === 0
+            //     ? "Standing"
+            //     : section === 1
+            //     ? "Falling"
+            //     : section === 2
+            //     ? "Typing"
+            //     : "Standing"
+            // }
             animation={
               section === 0
                 ? "Standing"
                 : section === 1
-                ? "Falling"
+                ? "Entry"
                 : section === 2
                 ? "Typing"
-                : "Standing"
+                : "Falling"
             }
-         />  */}
+         /> 
         </group>
       </motion.group>
     </>
