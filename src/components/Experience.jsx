@@ -99,7 +99,7 @@ export const Experience = (props) => {
           </mesh>
         </Float>
         <group scale={[2, 2, 2]} position-y={-10} position-x={-1}>
-          <Avatar
+          {/* <Avatar
             // rotation-x={5}
             position-z={1}
             position-x={1}
@@ -112,7 +112,7 @@ export const Experience = (props) => {
                 : section === 2
                 ? "Typing"
                 : "Standing"
-            }
+            } */}
           />
         </group>
       </motion.group>
