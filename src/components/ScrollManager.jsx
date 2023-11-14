@@ -31,27 +31,23 @@ export const ScrollManager = (props) => {
       lastScroll.current = data.scroll.current;
       return;
     }
-
+  
     const curSection = Math.floor(data.scroll.current * data.pages);
-
- if (data.scroll.current > lastScroll.current) {
-    // Scrolling down
-    if (curSection === 0) {
-      onSectionChange(1);
-    } else if (curSection === 1) {
-      onSectionChange(2);
+  
+    if (data.scroll.current > lastScroll.current) {
+      // Scrolling down
+      if (curSection < data.pages - 1) {
+        onSectionChange(curSection + 1);
+      }
+    } else if (data.scroll.current < lastScroll.current) {
+      // Scrolling up
+      if (curSection > 0) {
+        onSectionChange(curSection - 1);
+      }
     }
-  } else if (data.scroll.current < lastScroll.current) {
-    // Scrolling up
-    if (curSection === 1) {
-      onSectionChange(0);
-    } else if (curSection === 2) {
-      onSectionChange(1);
-    }
-  }
-
-  lastScroll.current = data.scroll.current;
-});
+  
+    lastScroll.current = data.scroll.current;
+  });
 
   return null;
 };
