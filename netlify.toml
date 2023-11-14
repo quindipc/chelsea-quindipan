@@ -1,16 +1,23 @@
-# example netlify.toml
 [build]
   command = "npm run build"
   functions = "netlify/functions"
   publish = "dist"
   chunkSizeWarningLimit = 3000
 
-  ## Uncomment to use this redirect for Single Page Applications like create-react-app.
-  ## Not needed for static site generators.
-[[redirects]]
-  from = "/public/*"
-  to = "/public/:splat"
-  status = 200
+  [[headers]]
+    for = "/*.gltf"
+    [headers.values]
+      Content-Type = "model/gltf+json"
+
+  [[headers]]
+    for = "/*.glb"
+    [headers.values]
+      Content-Type = "model/gltf-binary"
+
+  [[redirects]]
+    from = "/public/*"
+    to = "/public/:splat"
+    status = 200
 
   ## (optional) Settings for Netlify Dev
   ## https://github.com/netlify/cli/blob/main/docs/netlify-dev.md#project-detection
@@ -18,5 +25,3 @@
   #  command = "npm run dev" # Command to start your dev server
   #  port = 3000 # Port that the dev server will be listening on
   #  publish = "dist" # Folder with the static content for _redirect file
-
-  ## more info on configuring this file: https://docs.netlify.com/configure-builds/file-based-configuration/
