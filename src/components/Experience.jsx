@@ -98,14 +98,22 @@ export const Experience = (props) => {
             />
           </mesh>
         </Float>
-        <group scale={[2, 2, 2]} position-y={-10}>
-          {/* <Avatar
+        <group scale={[2, 2, 2]} position-y={-10} position-x={-1}>
+          <Avatar
             // rotation-x={5}
             position-z={1}
             position-x={1}
             rotation-x={-Math.PI / 1}
-            animation={section === 0 ? "Standing" : "Typing"}
-          /> */}
+            animation={
+              section === 0
+                ? "Standing"
+                : section === 1
+                ? "Falling"
+                : section === 2
+                ? "Typing"
+                : "Standing"
+            }
+          />
         </group>
       </motion.group>
     </>
