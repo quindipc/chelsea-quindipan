@@ -92,11 +92,8 @@ const AboutSection = () => {
       >
         {" "}
         I am a Graphic Designer turned Software Developer based in Toronto.
-        <br />
         I love to build and create things! I am committed to creating
-        <br />
         seamless, impactful digital solutions that bridge the gap between
-        <br />
         technology and design.
       </motion.p>
       <motion.p
@@ -110,9 +107,7 @@ const AboutSection = () => {
       >
         {" "}
         When I am not designing or coding, I love to spend my free time
-        <br />
         hanging out with my two cats, playing video games or
-        <br />
         indulge in my favourite shows!
       </motion.p>
       <div className="grid grid-cols-3 gap-2  mt-6">
