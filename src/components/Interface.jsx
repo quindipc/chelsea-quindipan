@@ -21,7 +21,7 @@ const Section = (props) => {
   const { children } = props;
   return (
     <motion.section
-      className={`h-screen w-screen p-8 max-x-screen 2xl mx-auto flex flex-col items-start justify-center`}
+    className={`min-h-screen w-full p-8 max-w-screen-2xl mx-auto flex flex-col items-start justify-center`}
       initial={{ opacity: 0, y: 50 }}
       // fade animation
       whileInView={{
@@ -240,12 +240,12 @@ const projects = [
 
 const ProjectSlide = ({ title, description, image, link }) => {
   return (
-    <div className="space-y-4 w-1/2">
+    <div className="space-y-4 w-full md:w-1/2 lg:w-1/3">
       <h3 className="text-3xl font-bold">{title}</h3>
       <p className="text-tertiary text-2xl">{description}</p>
       <a href={link}>
       <img
-        className="rounded-lg object-cover h-96 w-fit transition-transform transform hover:scale-110"
+        className="rounded-lg object-cover h-full md:h-full lg:h-80 w-full transition-transform transform hover:scale-110"
         src={image}
         alt={title}
       />
@@ -334,7 +334,7 @@ const ProjectSection = () => {
             opacity: 1,
             y: 0,
           }}
-          transition={{ duration: 1, delay: 2 }}
+          transition={{ duration: 1, delay: .75 }}
           onClick={prevProject}
         >
           Previous
@@ -347,7 +347,7 @@ const ProjectSection = () => {
             opacity: 1,
             y: 0,
           }}
-          transition={{ duration: 1, delay: 2 }}
+          transition={{ duration: 1, delay: .75 }}
           onClick={nextProject}
         >
           Next
