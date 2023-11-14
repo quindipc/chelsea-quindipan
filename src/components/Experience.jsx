@@ -157,12 +157,12 @@ export const Experience = (props) => {
             // }
             animation={
               section === 0
-                ? "Standing"
+                ? "Waving"
                 : section === 1
                 ? "Entry"
                 : section === 2
-                ? "Typing"
-                : "Falling"
+                ? "Standing"
+                : "Standing"
             }
          /> 
         </group>

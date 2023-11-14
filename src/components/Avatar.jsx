@@ -28,14 +28,14 @@ export function Avatar(props) {
   const { animations: standingAnimation } = useFBX("animations/Standing.fbx");
   const { animations: fallingAnimation } = useFBX("animations/Falling.fbx");
   const { animations: entryAnimation } = useFBX("animations/Entry.fbx");
-  // const { animations: wavingAnimation } = useFBX("animations/Waving.fbx");
+  const { animations: wavingAnimation } = useFBX("animations/Waving.fbx");
 
   // Rename animations for clarity
   typingAnimation[0].name = "Typing";
   standingAnimation[0].name = "Standing";
   fallingAnimation[0].name = "Falling";
   entryAnimation[0].name = "Entry";
-  // wavingAnimation[0].name = "waving";
+  wavingAnimation[0].name = "Waving";
 
   // Set up animation actions
   const { actions } = useAnimations(
@@ -44,7 +44,7 @@ export function Avatar(props) {
       standingAnimation[0],
       fallingAnimation[0],
       entryAnimation[0],
-      // wavingAnimation[0],
+      wavingAnimation[0],
     ],
     group,
   );
