@@ -113,7 +113,7 @@ export const Experience = (props) => {
                 ? "Typing"
                 : "Standing"
             } */}
-          />
+          {/* /> */}
         </group>
       </motion.group>
     </>
