@@ -154,8 +154,8 @@ export const Experience = (props) => {
                 : section === 2
                 ? "Typing"
                 : "Standing"
-            } */}
-          {/* /> */}
+            }
+         />  */}
         </group>
       </motion.group>
     </>

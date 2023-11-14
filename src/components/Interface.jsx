@@ -21,7 +21,7 @@ const Section = (props) => {
   const { children } = props;
   return (
     <motion.section
-    className={`min-h-screen w-full p-8 max-w-screen-2xl mx-auto flex flex-col items-start justify-center`}
+      className={`min-h-screen w-full p-8 max-w-screen-2xl mx-auto flex flex-col items-start justify-center`}
       initial={{ opacity: 0, y: 50 }}
       // fade animation
       whileInView={{
@@ -30,7 +30,11 @@ const Section = (props) => {
         transition: { duration: 1, delay: 0.6 },
       }}
     >
-      {children}
+      {/* Background Card */}
+      <div className="bg-white bg-opacity-60 rounded-lg shadow-md p-8 max-w-screen-md">
+        {/* Content */}
+        {children}
+      </div>
     </motion.section>
   );
 };
@@ -188,7 +192,7 @@ const SkillsSection = () => {
         <h2 className="text-6xl text-tertiary font-extrabold leading-snug">
           Skills
         </h2>
-        <div className="mt-8 space-y-">
+        <div className="mt-8 space-y-3">
           <div className="grid grid-cols-3 gap-2">
             {skills.map((skill, index) => (
               <div className="w-64" key={index}>
@@ -240,15 +244,15 @@ const projects = [
 
 const ProjectSlide = ({ title, description, image, link }) => {
   return (
-    <div className="space-y-4 w-full md:w-1/2 lg:w-1/3">
+    <div className="space-y-4">
       <h3 className="text-3xl font-bold">{title}</h3>
       <p className="text-tertiary text-2xl">{description}</p>
       <a href={link}>
-      <img
-        className="rounded-lg object-cover h-full md:h-full lg:h-80 w-full transition-transform transform hover:scale-110"
-        src={image}
-        alt={title}
-      />
+        <img
+          className="rounded-lg object-cover opacity-90 h-full md:h-full lg:h-full w-full transition-transform transform hover:scale-110 hover:shadow-xl hover:opacity-100"
+          src={image}
+          alt={title}
+        />
       </a>
     </div>
   );
@@ -326,7 +330,7 @@ const ProjectSection = () => {
         </motion.div>
       </div>
 
-      <div className="flex justify-center mt-4">
+      <div className="flex justify-start mt-4">
         <motion.button
           className={`bg-primary text-white w-40 py-4 px-8 rounded-lg font-bold text-lg mt-6`}
           initial={{ opacity: 0, y: 25 }}
@@ -334,7 +338,7 @@ const ProjectSection = () => {
             opacity: 1,
             y: 0,
           }}
-          transition={{ duration: 1, delay: .75 }}
+          transition={{ duration: 1, delay: 0.75 }}
           onClick={prevProject}
         >
           Previous
@@ -347,7 +351,7 @@ const ProjectSection = () => {
             opacity: 1,
             y: 0,
           }}
-          transition={{ duration: 1, delay: .75 }}
+          transition={{ duration: 1, delay: 0.75 }}
           onClick={nextProject}
         >
           Next
