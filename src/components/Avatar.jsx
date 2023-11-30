@@ -10,17 +10,19 @@ import { useControls } from "leva";
 
 export function Avatar(props) {
   // Preload the GLB file with custom headers
-  const { nodes, materials } = useGLTF("/models/Avatar.glb", {
-    headers: { "Content-Type": "model/gltf-binary" },
-  });
+  // const { nodes, materials } = useGLTF("models/Avatar.glb", {
+  //   headers: { "Content-Type": "model/gltf-binary" },
+  // });
+
+  const { nodes, materials } = useGLTF("models/Avatar.glb");
 
   const { animation } = props;
   // Define control options for the user interface
-  const { headFollow, cursorFollow, wireframe } = useControls({
-    headFollow: false,
-    cursorFollow: false,
-    wireframe: false,
-  });
+  // const { headFollow, cursorFollow, wireframe } = useControls({
+  //   headFollow: false,
+  //   cursorFollow: false,
+  //   wireframe: false,
+  // });
   const group = useRef();
 
   // Load various animations for the avatar
@@ -50,15 +52,15 @@ export function Avatar(props) {
   );
 
   // Handle updates in each frame of the animation
-  useFrame((state) => {
-    if (headFollow) {
-      group.current.getObjectByName("Head").lookAt(state.camera.position);
-    }
-    if (cursorFollow) {
-      const target = new THREE.Vector3(state.mouse.x, state.mouse.y, 1);
-      group.current.getObjectByName("Spine2").lookAt(target);
-    }
-  });
+  // useFrame((state) => {
+  //   if (headFollow) {
+  //     group.current.getObjectByName("Head").lookAt(state.camera.position);
+  //   }
+  //   if (cursorFollow) {
+  //     const target = new THREE.Vector3(state.mouse.x, state.mouse.y, 1);
+  //     group.current.getObjectByName("Spine2").lookAt(target);
+  //   }
+  // });
 
   // Set up animations based on user selection
   useEffect(() => {
@@ -69,11 +71,11 @@ export function Avatar(props) {
   }, [animation]);
 
   // Toggle wireframe mode for materials
-  useEffect(() => {
-    Object.values(materials).forEach((material) => {
-      material.wireframe = wireframe;
-    });
-  }, [wireframe]);
+  // useEffect(() => {
+  //   Object.values(materials).forEach((material) => {
+  //     material.wireframe = wireframe;
+  //   });
+  // }, [wireframe]);
 
   return (
     <group {...props} ref={group} dispose={null}>
@@ -135,7 +137,7 @@ export function Avatar(props) {
         geometry={nodes.Wolf3D_Hair.geometry}
         material={materials.Wolf3D_Hair}
         skeleton={nodes.Wolf3D_Hair.skeleton}
-        />
+      />
         </group>
     </group>
   );
