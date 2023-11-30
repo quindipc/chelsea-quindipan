@@ -10,7 +10,7 @@ import { animate, useMotionValue } from "framer-motion";
 import { motion } from "framer-motion-3d";
 import { useEffect, useRef, useState } from "react";
 import { framerMotionConfig } from "../config";
-import { Avatar } from "../../public/models/Avatar.glb";
+import { Avatar } from "../components/Avatar";
 import { Room } from "./Room";
 // import { Background } from "./Background";
 
