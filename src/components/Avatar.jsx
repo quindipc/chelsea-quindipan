@@ -77,6 +77,7 @@ export function Avatar(props) {
 
   return (
     <group {...props} ref={group} dispose={null}>
+      <group>
       <primitive object={nodes.Hips} />
       <skinnedMesh
         name="EyeLeft"
@@ -134,7 +135,8 @@ export function Avatar(props) {
         geometry={nodes.Wolf3D_Hair.geometry}
         material={materials.Wolf3D_Hair}
         skeleton={nodes.Wolf3D_Hair.skeleton}
-      />
+        />
+        </group>
     </group>
   );
 }
