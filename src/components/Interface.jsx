@@ -303,7 +303,7 @@ const ProjectSection = () => {
       <h2 className="sm:text-4xl md:text-5xl lg:text-6xl text-tertiary font-extrabold leading-snug">
         Projects
       </h2>
-      <div className="text-black mt-6 space-y-4 overflow-y-auto max-h-screen">
+      <div className="text-black mt-6 space-y-4">
         <motion.div
           custom={1}
           variants={variants}
