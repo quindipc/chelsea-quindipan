@@ -3,7 +3,8 @@
 import {
   Float,
   MeshDistortMaterial,
-  MeshWobbleMaterial, useScroll
+  MeshWobbleMaterial,
+  useScroll,
 } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { animate, useMotionValue } from "framer-motion";
@@ -46,16 +47,15 @@ export const Experience = (props) => {
 
   useEffect(() => {
     let animation = "Standing";
-  
+
     if (section === 1) {
       animation = "Waving";
     } else if (section === 2) {
       animation = "Typing";
     }
-  
+
     setCharacterAnimation(animation);
   }, [section, setCharacterAnimation]);
-  
 
   useFrame((state) => {
     let curSection = Math.floor(data.scroll.current * data.pages);
@@ -92,18 +92,8 @@ export const Experience = (props) => {
     <>
       {/* <Background /> */}
       <ambientLight intensity={1} />
-      <motion.group
-        //  position={[1.5, 2, 3]}
-        // animate={{
-          //   y: section === 1 ? 0 : -8,
-          // }}
-          // rotation-y={-Math.PI / 4}
-          // rotation-y={5.3}
-          // rotation-x={-4.7}
-          // scale={[0.8, 0.8, 0.8]}
-          
-          // position={[1, 2, 3]}
-          scale={[0.9, 0.9, 0.9]}
+      {/* <motion.group
+        scale={[0.9, 0.9, 0.9]}
         position-y={-5}
         position-x={1}
         position-z={1}
@@ -114,39 +104,29 @@ export const Experience = (props) => {
         }}
         variants={{
           0: {
-            scaleX:0.9,
-            scaleY:0.9,
-            scaleZ:0.9,
+            scaleX: 0.9,
+            scaleY: 0.9,
+            scaleZ: 0.9,
           },
           1: {
             y: -5,
             x: 1,
             z: 1,
-            // rotateX: 0,
-            // rotateY: 0,
-            // rotateZ: 0,
           },
           2: {
             y: -5,
             x: 1,
             z: 1,
-            // rotateX: 0,
-            // rotateY: 0,
-            // rotateZ: 0,
           },
           3: {
             y: -5,
             x: 1,
             z: 1,
-            // rotateX: 0,
-            // rotateY: 0,
-            // rotateZ: 0,
           },
         }}
       >
-           <Avatar animation={characterAnimation} />
-        {/* <Room section={section} /> */}
-      </motion.group>
+        <Avatar animation={characterAnimation} />
+      </motion.group> */}
 
       <motion.group
         position={[-1, 5, 5]}
@@ -253,7 +233,7 @@ export const Experience = (props) => {
           </Float>
         </group>
         {/* <group scale={[2, 2, 2]} position-y={-10} position-x={-1}> */}
-          {/* <Avatar
+        {/* <Avatar
             // rotation-x={5}
             position-z={1}
             position-x={1}
