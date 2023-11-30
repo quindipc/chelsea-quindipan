@@ -72,17 +72,17 @@ const socials = [
 const AboutSection = () => {
   return (
     <Section>
-      <h1 className="text-6xl text-tertiary font-extrabold leading-snug">
-        Hi I'm <br />{" "}
+      <h1 className="sm:text-4xl md:text-5xl lg:text-6xl text-tertiary font-extrabold leading-snug">
+        Hi I'm
         <img
-          className="w-96 bg-primary  p-5 rounded-md"
+          className="w-1/2 bg-primary p-4 rounded-md mt-4"
           src={chelseaLogo}
           alt="Chelsea Quindipan logo"
         />
       </h1>
 
       <motion.p
-        className="text-2xl text-black mt-6"
+        className="text-lg md:text-xl lg:text-2xl text-black mt-6"
         initial={{ opacity: 0, y: 25 }}
         whileInView={{
           opacity: 1,
@@ -90,17 +90,13 @@ const AboutSection = () => {
         }}
         transition={{ duration: 1, delay: 1.5 }}
       >
-        {" "}
-        I am a Graphic Designer turned Software Developer based in Toronto.
-        <br />
-        I love to build and create things! I am committed to creating
-        <br />
-        seamless, impactful digital solutions that bridge the gap between
-        <br />
-        technology and design.
+        I am a Graphic Designer turned Software Developer based in Toronto. I
+        love to build and create things! I am committed to creating seamless,
+        impactful digital solutions that bridge the gap between technology and
+        design.
       </motion.p>
       <motion.p
-        className="text-2xl text-primary mt-6"
+        className="text-lg md:text-xl lg:text-2xl text-primary mt-6"
         initial={{ opacity: 0, y: 25 }}
         whileInView={{
           opacity: 1,
@@ -108,21 +104,18 @@ const AboutSection = () => {
         }}
         transition={{ duration: 1, delay: 1.5 }}
       >
-        {" "}
-        When I am not designing or coding, I love to spend my free time
-        <br />
-        hanging out with my two cats, playing video games or
-        <br />
-        indulge in my favourite shows!
+        When I am not designing or coding, I love to spend my free time hanging
+        out with my two cats, playing video games or indulge in my favourite
+        shows!
       </motion.p>
-      <div className="grid grid-cols-3 gap-2  mt-6">
+      <div className="grid grid-cols-3 gap-2 mt-6">
         {socials.map((social, index) => (
-          <div className="w-50" key={index}>
+          <div className="w-64" key={index}>
             <a href={social.link} target="_blank" rel="noopener noreferrer">
               <motion.img
                 src={social.icon}
                 alt={social.title}
-                className="w-20 h-20 m-2 transition-transform transform hover:scale-110"
+                className="w-20 h-auto m-2 max-w-full transition-transform transform hover:scale-110"
                 initial={{ opacity: 0 }}
                 whileInView={{
                   opacity: 1,
@@ -189,30 +182,30 @@ const SkillsSection = () => {
   return (
     <Section>
       <div>
-        <h2 className="text-6xl text-tertiary font-extrabold leading-snug">
+        <h2 className="sm:text-4xl md:text-5xl lg:text-6xl text-tertiary font-extrabold leading-snug">
           Skills
         </h2>
-        <div className="mt-8 space-y-3">
-          <div className="grid grid-cols-3 gap-2">
-            {skills.map((skill, index) => (
-              <div className="w-64" key={index}>
-                <a href={skill.link} target="_blank" rel="noopener noreferrer">
-                  <motion.img
-                    src={skill.icon}
-                    alt={skill.title}
-                    className="w-20 h-20 m-2 transition-transform transform hover:scale-110"
-                    initial={{ opacity: 0 }}
-                    whileInView={{
-                      opacity: 1,
-                    }}
-                    transition={{ duration: 1, delay: 1 }}
-                  />
-                </a>
-              </div>
-            ))}
-          </div>
+        {/* <div className="mt-8 space-y-3"> */}
+        <div className="grid grid-cols-3 gap-6 mt-6">
+          {skills.map((skill, index) => (
+            <div className="w-64" key={index}>
+              <a href={skill.link} target="_blank" rel="noopener noreferrer">
+                <motion.img
+                  src={skill.icon}
+                  alt={skill.title}
+                  className="w-20 m-2 transition-transform transform hover:scale-110"
+                  initial={{ opacity: 0 }}
+                  whileInView={{
+                    opacity: 1,
+                  }}
+                  transition={{ duration: 1, delay: 1 }}
+                />
+              </a>
+            </div>
+          ))}
         </div>
       </div>
+      {/* </div> */}
     </Section>
   );
 };
@@ -245,8 +238,8 @@ const projects = [
 const ProjectSlide = ({ title, description, image, link }) => {
   return (
     <div className="space-y-4">
-      <h3 className="text-3xl font-bold">{title}</h3>
-      <p className="text-tertiary text-2xl">{description}</p>
+      <h3 className="sm:text-xl md:text-2xl lg:text-3xl font-bold">{title}</h3>
+      <p className="text-tertiary sm:text-lg md:text-xl lg:text-3xl pb-4">{description}</p>
       <a href={link}>
         <img
           className="rounded-lg object-cover opacity-90 h-full md:h-full lg:h-full w-full transition-transform transform hover:scale-110 hover:shadow-xl hover:opacity-100"
@@ -307,10 +300,10 @@ const ProjectSection = () => {
   };
   return (
     <Section>
-      <h2 className="text-6xl text-tertiary font-extrabold leading-snug">
+      <h2 className="sm:text-4xl md:text-5xl lg:text-6xl text-tertiary font-extrabold leading-snug">
         Projects
       </h2>
-      <div className="text-lg text-black mt-6 space-y-4 overflow-y-auto max-h-screen">
+      <div className="text-black mt-6 space-y-4 overflow-y-auto max-h-screen">
         <motion.div
           custom={1}
           variants={variants}
@@ -332,7 +325,7 @@ const ProjectSection = () => {
 
       <div className="flex justify-start mt-4">
         <motion.button
-          className={`bg-primary text-white w-40 py-4 px-8 rounded-lg font-bold text-lg mt-6`}
+          className={`bg-primary text-white w-full py-4 px-8 rounded-lg font-bold sm:text-md md:text-lg lg:text-lg mt-6`}
           initial={{ opacity: 0, y: 25 }}
           whileInView={{
             opacity: 1,
@@ -345,7 +338,7 @@ const ProjectSection = () => {
         </motion.button>
 
         <motion.button
-          className={`bg-primary text-white w-40 py-4 px-8 ml-6 rounded-lg font-bold text-lg mt-6`}
+          className={`bg-primary text-white w-full py-4 px-8 ml-6 rounded-lg font-bold sm:text-md md:text-lg lg:text-lg mt-6`}
           initial={{ opacity: 0, y: 25 }}
           whileInView={{
             opacity: 1,
