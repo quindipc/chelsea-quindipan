@@ -224,14 +224,14 @@ const projects = [
     image: mythicTails,
     link: "https://mythic-tails-cursebreakers-odyssey.netlify.app/",
     description:
-      "Mythic Tails: Cursebreaker’s Odyssey is an immersive text adventure game that takes players on a captivating journey through a cursed realm.",
+      "Mythic Tails: Cursebreaker’s Odyssey is an immersive text adventure game that takes players on a captivating journey.",
   },
   {
     title: "Insights AI - Google Hackathon",
     image: insightsAI,
     link: "https://github.com/amirkiaml/Google-Industry-Day",
     description:
-      "Insights is a powerful widget integrated into the Google platform that provides users with clear explanations of how AI enhances their experience, utilizes their data, and delivers the results they receive ",
+      "Insights is a powerful widget integrated into the Google platform.",
   },
 ];
 
