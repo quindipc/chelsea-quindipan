@@ -31,7 +31,7 @@ const Section = (props) => {
       }}
     >
       {/* Background Card */}
-      <div className="bg-white bg-opacity-60 rounded-lg shadow-md p-8 max-w-screen-md">
+      <div className="bg-white bg-opacity-60 rounded-lg shadow-md p-8 max-w-screen-md max-h-screen">
         {/* Content */}
         {children}
       </div>
@@ -310,7 +310,7 @@ const ProjectSection = () => {
       <h2 className="text-6xl text-tertiary font-extrabold leading-snug">
         Projects
       </h2>
-      <div className="text-lg text-black mt-6 space-y-4">
+      <div className="text-lg text-black mt-6 space-y-4 overflow-y-auto max-h-screen">
         <motion.div
           custom={1}
           variants={variants}
