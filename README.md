@@ -29,14 +29,9 @@ In process....
 
 ## License, Credit & Attributions
 
-### Images:
-- [Veronica Iezzi](https://blush.design/artists/aG3vXzI3xdJ5mZlbaG9Q) by [Blush](https://blush.design/)
-
-### Tutorial by:
-- [Wawa Sensei](https://www.youtube.com/@WawaSensei)
-
 ### Inspiration by:
 - [David Heckoff](https://www.david-hckh.com/)
+- [Wawa Sensei](https://www.youtube.com/@WawaSensei)
 
 ### Blender Models:
 - Cat by Poly by Google [CC-BY](https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/6dM1J6f6pm9)
@@ -51,6 +46,6 @@ In process....
 
 ## About the developer
 
-Hey there! My name is Chelsea Quindipan, and I am a recent graduate from BrainStation's Software Engineering Program. I first became interested in coding because I wanted to build my own portfolio as a Freelance Graphic Designer. This interest in coding eventually led me to make a career shift to become a Full Stack Software Developer!
+Hey there! My name is Chelsea Quindipan, I am a creative Software Developer with a passion for 3D art, pixel graphics, and video games. 
 
 For support or inquiries, feel free to reach out to [quindipc@gmail.com].
