@@ -92,7 +92,7 @@ export const Experience = (props) => {
     <>
       {/* <Background /> */}
       <ambientLight intensity={1} />
-      <motion.group
+      {/* <motion.group
         scale={[0.9, 0.9, 0.9]}
         position-y={-5}
         position-x={1}
@@ -126,7 +126,7 @@ export const Experience = (props) => {
         }}
       >
         <Avatar animation={characterAnimation} />
-      </motion.group>
+      </motion.group> */}
 
       <motion.group
         position={[-1, 5, 5]}
