@@ -25,7 +25,8 @@ This is my updated 2023 portfolio showcasing my work as a Software Developer! If
 
 ## Screenshots
 
-In process....
+![image](https://github.com/quindipc/chelsea-quindipan/assets/72505897/48009d4a-03f2-40ee-b1c1-31ae0b0a5617)
+
 
 ## License, Credit & Attributions
 
