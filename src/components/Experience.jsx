@@ -20,10 +20,12 @@ export const Experience = (props) => {
   const { viewport } = useThree();
   const data = useScroll();
 
+  const isMobile = window.innerWidth < 768;
+  const responsiveRatio = viewport.width / 12;
   const [section, setSection] = useState(0);
 
-  const cameraPositionX = useMotionValue(0);
-  const cameraLookAtX = useMotionValue(0);
+  const cameraPositionX = useMotionValue();
+  const cameraLookAtX = useMotionValue();
 
   useEffect(() => {
     animate(cameraPositionX, menuOpened ? -5 : 0, {
@@ -39,11 +41,14 @@ export const Experience = (props) => {
   const [characterAnimation, setCharacterAnimation] = useState("Waving");
 
   // useEffect(() => {
-  //   setCharacterAnimation("Standing");
+  //   setCharacterAnimation("Falling");
   //   setTimeout(() => {
-  //     setCharacterAnimation(section === 0 ? "Waving" : "Standing");
-  //   }, 200);
+  //     setCharacterAnimation(section === 0 ? "Typing" : "Standing");
+  //   }, 600);
   // }, [section]);
+
+  
+  const characterGroup = useRef();
 
   useEffect(() => {
     let animation = "Standing";
@@ -91,7 +96,7 @@ export const Experience = (props) => {
   return (
     <>
       {/* <Background /> */}
-      <ambientLight intensity={1} />
+
       <motion.group
         scale={[0.9, 0.9, 0.9]}
         position-y={-5}
@@ -127,7 +132,7 @@ export const Experience = (props) => {
       >
         <Avatar animation={characterAnimation} />
       </motion.group>
-
+      <ambientLight intensity={1} />
       <motion.group
         position={[-1, 5, 5]}
         scale={[0.9, 0.9, 0.9]}
