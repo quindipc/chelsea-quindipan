@@ -69,11 +69,11 @@ export function Avatar(props) {
   }, [animation]);
 
   // Toggle wireframe mode for materials
-  // useEffect(() => {
-  //   Object.values(materials).forEach((material) => {
-  //     material.wireframe = wireframe;
-  //   });
-  // }, [wireframe]);
+  useEffect(() => {
+    Object.values(materials).forEach((material) => {
+      material.wireframe = wireframe;
+    });
+  }, [wireframe]);
 
   return (
     <group {...props} ref={group} dispose={null}>
