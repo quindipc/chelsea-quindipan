@@ -9,19 +9,19 @@ import { useFrame } from "@react-three/fiber";
 import { useControls } from "leva";
 
 export function Avatar(props) {
+  const group = useRef();
   // Preload the GLB file with custom headers
-  const { nodes, materials } = useGLTF("/models/Avatar.glb", {
-    headers: { "Content-Type": "model/gltf-binary" },
-  });
+  const { nodes, materials } = useGLTF("models/Avatar.glb");
 
   const { animation } = props;
+
   // Define control options for the user interface
   const { headFollow, cursorFollow, wireframe } = useControls({
     headFollow: false,
     cursorFollow: false,
     wireframe: false,
   });
-  const group = useRef();
+  
 
   // Load various animations for the avatar
   const { animations: typingAnimation } = useFBX("animations/Typing.fbx");
@@ -140,3 +140,8 @@ export function Avatar(props) {
 }
 
 useGLTF.preload("models/Avatar.glb");
+useFBX.preload("animations/Typing.fbx");
+useFBX.preload("animations/Standing.fbx");
+useFBX.preload("animations/Falling.fbx");
+useFBX.preload("animations/Entry.fbx");
+useFBX.preload("animations/Waving.fbx");
